@@ -8,6 +8,7 @@ __pycache__/
 
 DeliveryDataProject/venv
 DeliveryDataProject/.idea
+DeliveryDataProject/testdata.csv
 
 # Distribution / packaging
 .Python
