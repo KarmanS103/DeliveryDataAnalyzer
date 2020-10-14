@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+DeliveryDataProject/venv
+DeliveryDataProject/.idea
+
 # Distribution / packaging
 .Python
 build/
