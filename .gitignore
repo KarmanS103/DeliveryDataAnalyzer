@@ -6,9 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+#Project Specific Ignores
 DeliveryDataProject/venv
 DeliveryDataProject/.idea
 DeliveryDataProject/Payment Details/*.xlsx
+DeliveryDataProject/Payment Details/*.csv
 
 #Distribution / packaging
 .Python
