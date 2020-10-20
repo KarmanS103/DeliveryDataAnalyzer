@@ -8,9 +8,9 @@ __pycache__/
 
 DeliveryDataProject/venv
 DeliveryDataProject/.idea
-DeliveryDataProject/testdata.csv
+DeliveryDataProject/Payment Details/*.xlsx
 
-# Distribution / packaging
+#Distribution / packaging
 .Python
 build/
 develop-eggs/

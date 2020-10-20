@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 
 
+# Get file path for folder instead and read in all of the files from the folder
 class DoorDashImporter:
     def begin_import(self):
-        filepath = input("What is the file path for your DoorDash Report? ")
-        doordash_df = pd.read_csv(filepath)
+        doordash_df = pd.read_csv("Payment Details/testdata.csv")
         print(doordash_df.head(5))
 
 
