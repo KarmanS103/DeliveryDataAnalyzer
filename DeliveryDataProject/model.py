@@ -2,20 +2,34 @@ import pandas as pd
 import numpy as np
 import glob
 
+uber_report_types = ["Payment Details"]
 
-# Get file path for folder instead and read in all of the files from the folder
+
+# , "Order Errors(Menu Item)", "Order Errors(Transaction)",
+#                  "Order History", "Downtime", "Customer and Delivery Feedback",
+#                  "Menu Item Feedback"]
+# TODO: Add remaining reports
+
+
 def ubereats_importer():
-    payment_details_df = payment_details_importer()
+    list_of_dfs = []
+    for report in uber_report_types:
+        list_of_dfs.append(folder_importer(report))
+
+    return list_of_dfs
 
 
-def payment_details_importer():
-    list_of_df = []
-
-    for name in glob.glob("Payment Details/*.csv"):
-        list_of_df.append(pd.read_csv(name))
-
-    payment_details_df = pd.concat(list_of_df)
+# Given a folder name, reads all of the reports in that folder and creates a single dataframe
+# from them
+# TODO: Remove Duplicates
+def folder_importer(folder_name):
+    dfs = []
+    for name in glob.glob(folder_name + "/*.csv"):
+        dfs.append(pd.read_csv(name))
+    returndf = pd.concat(dfs)
+    return returndf
 
 
 if __name__ == "__main__":
-    ubereats_importer()
+    uber_eats_reports = ubereats_importer()
+    print(uber_eats_reports[0])
